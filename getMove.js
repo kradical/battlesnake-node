@@ -235,6 +235,9 @@ const chooseDirection = (ratings, game) => {
 
   const sortedOptions = Object.keys(options).sort((a, b) => options[a] > options[b])
 
+  console.log(ratings);
+  console.log(sortedOptions);
+
   return sortedOptions[0];
 }
 
