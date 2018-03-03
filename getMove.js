@@ -235,7 +235,7 @@ const chooseDirection = (ratings, game) => {
     options.down = ratings[currentHead.y + 1][currentHead.x];
   }
 
-  return Object.keys(options).sort((a, b) => options[a] < options[b])[0];
+  return Object.keys(options).sort((a, b) => options[a] > options[b])[0];
 }
 
 const getMove = (game) => {
