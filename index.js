@@ -34,7 +34,7 @@ app.use(poweredByHandler)
 app.post('/start', (request, response) => {
   const data = {
     color: '#FFFFFF',
-    taunt: 'snek',
+    taunt: 'null',
     head_type: 'regular',
     tail_type: 'regular',
     head_url: 'brokenLink',

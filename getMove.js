@@ -168,19 +168,21 @@ const getRatings = (board, game) => {
     (value) => value <= 0
   );
 
-  // boost ratings for food
+  // boost ratings for food if under 50 health
 
   const currentHealth = game.you.health;
 
-  for (const piece of game.food.data) {
-    ratedMap = {};
-    alterRatingsField(
-      ratings,
-      piece,
-      300 - currentHealth,
-      (value) => value * 0.75 - 10,
-      (value) => value <= 0
-    );
+  if (currentHealth < 50) {
+    for (const piece of game.food.data) {
+      ratedMap = {};
+      alterRatingsField(
+        ratings,
+        piece,
+        10 * (100 - currentHealth),
+        (value) => value * 0.75 - 10,
+        (value) => value <= 0
+      );
+    }
   }
 
   // unboost ratings for larger/same size snakes (exp)
@@ -202,8 +204,8 @@ const getRatings = (board, game) => {
       alterRatingsField(
         ratings,
         head,
-        -200,
-        (value) => value * 0.5 + 10,
+        -400,
+        (value) => value * 0.4 + 10,
         (value) => value >= 0
       );
     }
@@ -235,8 +237,7 @@ const chooseDirection = (ratings, game) => {
 
   const sortedOptions = Object.keys(options).sort((a, b) => options[a] < options[b]);
 
-  console.log(options);
-  console.log(sortedOptions);
+  // TODO: go through the sorted options to find caverns
 
   return sortedOptions[0];
 }
