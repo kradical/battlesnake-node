@@ -37,7 +37,7 @@ app.post('/start', (request, response) => {
     taunt: 'snek',
     head_type: 'regular',
     tail_type: 'regular',
-    head_url: 'https://hellogiggles.com/img/icons/missing-image-16x9.svg',
+    head_url: 'brokenLink',
   }
 
   return response.json(data)
