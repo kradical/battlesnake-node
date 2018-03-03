@@ -177,8 +177,8 @@ const getRatings = (board, game) => {
     alterRatingsField(
       ratings,
       piece,
-      200 - currentHealth,
-      (value) => value * 0.5 - 10,
+      300 - currentHealth,
+      (value) => value * 0.75 - 10,
       (value) => value <= 0
     );
   }
@@ -202,7 +202,7 @@ const getRatings = (board, game) => {
       alterRatingsField(
         ratings,
         head,
-        -100,
+        -200,
         (value) => value * 0.5 + 10,
         (value) => value >= 0
       );
