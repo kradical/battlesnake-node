@@ -35,8 +35,9 @@ app.post('/start', (request, response) => {
   const data = {
     color: '#FFFFFF',
     taunt: 'snek',
-    'head_type': 'regular',
-    'tail_type': 'regular',
+    head_type: 'regular',
+    tail_type: 'regular',
+    head_url: 'https://hellogiggles.com/img/icons/missing-image-16x9.svg',
   }
 
   return response.json(data)
