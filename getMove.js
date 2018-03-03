@@ -233,9 +233,9 @@ const chooseDirection = (ratings, game) => {
     options.down = ratings[currentHead.y + 1][currentHead.x];
   }
 
-  const sortedOptions = Object.keys(options).sort((a, b) => options[a] > options[b])
+  const sortedOptions = Object.keys(options).sort((a, b) => options[a] < options[b]);
 
-  console.log(ratings);
+  console.log(options);
   console.log(sortedOptions);
 
   return sortedOptions[0];
