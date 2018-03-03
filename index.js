@@ -45,7 +45,7 @@ app.post('/start', (request, response) => {
 app.post('/move', (request, response) =>
   response.json({
     move: getMove(request.body),
-    taunt: 'snek',
+    taunt: 'null',
   })
 )
 

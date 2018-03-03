@@ -83,8 +83,6 @@ const getBoard = (game) => {
 
   fillSnakes(board, game.snakes.data, game.you.id);
 
-  console.log(board);
-
   return board;
 };
 
@@ -234,6 +232,9 @@ const chooseDirection = (ratings, game) => {
   if (currentHead.y + 1 < ratings.length) {
     options.down = ratings[currentHead.y + 1][currentHead.x];
   }
+
+  console.log(ratings);
+  console.log(options);
 
   return Object.keys(options).sort((a, b) => options[a] > options[b])[0];
 }
